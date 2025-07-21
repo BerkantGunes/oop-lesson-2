@@ -1,0 +1,24 @@
+﻿@model Project_OOP.Entity.Product
+@{
+    ViewData["Title"] = "UpdateProduct";
+    Layout = "~/Views/Shared/_CoreLayout.cshtml";
+}
+
+<h1>Update Product Page</h1>
+
+<form method="post">
+    @Html.Label("Product Id")
+    @Html.TextBoxFor(x=>x.Id, new { @class = "form-control"} ) 
+    <br />
+    @Html.Label("Product Name")
+    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+    <br />
+    @Html.Label("Product Price")
+    @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
+    <br />
+    @Html.Label("Product Stock")
+    @Html.TextBoxFor(x => x.Stock, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Update</button>
+</form>
+
