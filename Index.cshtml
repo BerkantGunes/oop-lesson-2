@@ -1,12 +1,31 @@
-﻿@{
-    Layout=null;
+﻿@using Project_OOP.Entity <!-- Verileri cekecegimiz classın Entitysi -->
+@model List<Product>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_CoreLayout.cshtml";
 }
 
-<h1>Merhaba Core OOP Projesi</h1>
+<h1>Product Page</h1>
 
-<!-- Messages metotunu göstermek icin; -->
-<h1>Message List</h1>
-<h1>-----------------------</h1>
-<h2>@ViewBag.m1</h2>
-<h2>@ViewBag.m2</h2>
-<h2>@ViewBag.m3</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Product Name</th>
+        <th>Price</th>
+        <th>Stock</th>
+        <th>Delete</th>
+        <th>Update</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Name</td>
+            <td>@item.Price</td>
+            <td>@item.Stock</td>
+            <td><a href="/Product/DeleteProduct/@item.Id" class="btn btn-danger">Delete</a></td>
+            <td><a href="/Product/UpdateProduct/@item.Id" class="btn btn-success">Update</a></td>
+        </tr>
+    }
+</table>
+<a href="/Product/AddProduct/" class="btn btn-primary">Add New Product</a>
