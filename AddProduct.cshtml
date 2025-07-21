@@ -1,0 +1,21 @@
+﻿@model Project_OOP.Entity.Product
+@{
+    ViewData["Title"] = "AddProduct";
+    Layout = "~/Views/Shared/_CoreLayout.cshtml";
+}
+
+<h1>AddProduct Page</h1>
+
+<form method="post"> <!-- Form methodu post olursa bu blok çalışacak -->
+    @Html.Label("Product Name")
+    @Html.TextBoxFor(x=>x.Name, new { @class = "form-control" })
+    <br />
+    @Html.Label("Price")
+    @Html.TextBoxFor(x=>x.Price, new { @class = "form-control" })
+    <br />
+    @Html.Label("Stock")
+    @Html.TextBoxFor(x=>x.Stock, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Save Product</button>
+</form>
+
